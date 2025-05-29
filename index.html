@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdvME8rAAAAAAv0lvvEES8LUshanG5B9ZEDY-F7"></script>
+
+     <script>
+   function onSubmit(token) {
+     document.getElementById("demo-form").submit();
+   }
+ </script>
+
+       <script>
+      function onClick(e) {
+        e.preventDefault();
+        grecaptcha.ready(function() {
+          grecaptcha.execute('6LdvME8rAAAAAAv0lvvEES8LUshanG5B9ZEDY-F7', {action: 'submit'}).then(function(token) {
+              window.open('main.html')
+          });
+        });
+      }
+  </script>
+
+    <style>
+      container {
+        text-align: center
+      }
+    </style>
+    
+    
+  </head>
+
+  <body>
+    <div class="container"><button class="g-recaptcha" 
+        data-sitekey="reCAPTCHA_site_key" 
+        data-callback='onSubmit' 
+        data-action='submit'>Click here to access website</button></div>
+  </body>
+
+  
+</html>
